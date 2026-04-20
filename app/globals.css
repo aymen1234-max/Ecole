@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), sans-serif;
+  
+  --color-brand-primary: #2563eb;
+  --color-brand-secondary: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 antialiased bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-brand-secondary;
+  }
+}
+
+@layer components {
+  .glass-header {
+    @apply sticky top-0 z-50 w-full border-b border-white/20 bg-white/70 backdrop-blur-md transition-all duration-300;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .lang-switch {
+    @apply flex items-center gap-2 text-xs font-bold uppercase tracking-wider;
+  }
+
+  .arabic-text {
+    font-family: 'Inter', sans-serif;
+    direction: rtl;
+  }
+}
+
+.announcement-bar {
+  @apply bg-brand-secondary text-white py-2 text-[10px] sm:text-xs font-medium overflow-hidden;
+}
